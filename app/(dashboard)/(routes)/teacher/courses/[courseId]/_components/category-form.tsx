@@ -24,11 +24,6 @@ const formSchema = z.object({
 })
 
 const CategoryForm = ({ initialData, courseId, options }: CategoryFormProps) => {
-
-    if (!options || options.length === 0) {
-        return <p>Loading...</p>; 
-      }
-
     const [isEditing, setIsEditing ] = useState(false);
     const toggleEdit = () => setIsEditing((current) => !current);
 
