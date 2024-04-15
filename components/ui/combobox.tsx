@@ -49,10 +49,11 @@ export const Combobox = ({ options, value, onChange} : ComboboxProps) => {
           <CommandEmpty>No option found.</CommandEmpty>
           <CommandGroup>
             {options.map((option) => (
-              <CommandList>
-                <CommandItem
+              <CommandList
                 key={option.value}
-                onSelect={() => {
+              >
+                <CommandItem
+                  onSelect={() => {
                   onChange(option.value === value ? "" : option.value);
                   setOpen(false)
                 }}
