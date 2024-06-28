@@ -52,4 +52,4 @@ const CourseSidebarItem = ({ id, label, isCompleted, courseId, isLocked }: Cours
   )
 }
 
-export default CourseSidebarItem
+export default CourseSidebarItem;

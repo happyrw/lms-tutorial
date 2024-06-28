@@ -1,13 +1,12 @@
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
-import Mux from "@mux/mux-node";
+import Mux from '@mux/mux-node';
 
-const mux = new Mux(
-    process.env.MUX_TOKEN_SECRET!,
-    process.env.MUX_TOKEN_ID
-);
-
+const mux = new Mux({
+  tokenId: process.env.MUX_TOKEN_ID,
+  tokenSecret: process.env.MUX_TOKEN_SECRET
+});
 
 
 export async function DELETE(req: Request, { params }:{ params: { courseId: string }}) {

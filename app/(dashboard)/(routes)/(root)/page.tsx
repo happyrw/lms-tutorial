@@ -4,6 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { CheckCircle, Clock } from "lucide-react";
 import { redirect } from "next/navigation";
 import InfoCard from "./_components/info-card";
+import { FileUpload } from "@/components/file-upload";
 
 export default async function Dashboard() {
   const { userId } = auth();
@@ -34,4 +35,4 @@ export default async function Dashboard() {
   );
 }
 
-//0780762543 Bebetoken
+//0780762543 Bebeto

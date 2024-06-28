@@ -5,6 +5,9 @@ import { ClerkProvider } from "@clerk/nextjs";
 import ToastProvider from "@/components/providers/toaster-provider";
 import { ConfettiProvider } from "@/components/providers/confetti-provider";
 
+import 'react-pdf/dist/Page/TextLayer.css';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -29,3 +32,5 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+{/* <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.1.392/pdf.min.mjs"></script> */}

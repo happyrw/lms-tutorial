@@ -7,26 +7,26 @@ import qs from "query-string";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const SearchInput = () => {
-    const [value, setValue] = useState("");
-    const debouncedValue = useDebounce(value);
+  const [value, setValue] = useState("");
+  const debouncedValue = useDebounce(value);
 
-    const searchParams = useSearchParams();
-    const router = useRouter();
-    const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
-    const currentCategoryId = searchParams.get("categoryId");
+  const currentCategoryId = searchParams.get("categoryId");
 
-    useEffect(() => {
-        const url = qs.stringifyUrl({
-            url: pathname,
-            query: {
-                categoryId: currentCategoryId,
-                title: debouncedValue,
-            }
-        }, { skipEmptyString: true, skipNull: true });
+  useEffect(() => {
+    const url = qs.stringifyUrl({
+      url: pathname,
+      query: {
+        title: debouncedValue,
+        categoryId: currentCategoryId,
+      }
+    }, { skipEmptyString: true, skipNull: true });
 
-        router.push(url);
-    }, [debouncedValue, currentCategoryId, router, pathname]);
+    router.push(url);
+  }, [debouncedValue, currentCategoryId, router, pathname]);
 
   return (
     <div className="relative">

@@ -5,7 +5,7 @@ const f = createUploadthing();
 export const ourFileRouter = {
     courseImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 }})
         .onUploadComplete(() => {}),
-    courseAttachment: f(["text", "image", "audio", "video", "pdf"])
+    courseAttachment: f(["pdf"]) //["text", "image", "audio", "video", "pdf"]
         .onUploadComplete(() => {}),
     chapterVideo: f({ video: { maxFileSize: "512GB", maxFileCount: 1 }})
         .onUploadComplete(() => {}),
